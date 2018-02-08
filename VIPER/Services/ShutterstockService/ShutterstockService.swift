@@ -9,12 +9,8 @@
 import Foundation
 import RxSwift
 
-struct ShutterstockSearchResult {
-
-}
-
 protocol ShutterstockServiceType {
-    func search(for name: String) -> Single<[ShutterstockSearchResult]>
+    func search(for name: String) -> Single<[ShutterstockImage]>
 }
 
 class ShutterstockService: ShutterstockServiceType {
@@ -33,7 +29,7 @@ class ShutterstockService: ShutterstockServiceType {
         self.consumerSecret = consumerSecret
     }
 
-    func search(for name: String) -> Single<[ShutterstockSearchResult]> {
+    func search(for name: String) -> Single<[ShutterstockImage]> {
         return .just([])
     }
 

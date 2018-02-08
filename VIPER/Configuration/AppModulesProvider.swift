@@ -30,7 +30,15 @@ class AppModulesProvider: AppModulesProviderType {
     // MARK: - Module registration
 
     private func registerModules() {
-        // TODO: Register known app modules
+        registerSearchPageModule(in: modulesContainer, with: appServicesProvider)
+    }
+
+    private func registerSearchPageModule(in container: Container,
+                                          with serviceProvider: AppServicesProviderType) {
+        container.register(SearchPageBuilderType.self) { (resolver) -> SearchPageBuilderType in
+            return SearchPageBuilder(appServicesProvider: serviceProvider,
+                                     appModulesProvider: self)
+        }
     }
 
 }

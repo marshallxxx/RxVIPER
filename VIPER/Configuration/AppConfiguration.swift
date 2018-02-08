@@ -31,6 +31,7 @@ class AppConfigurator: AppConfiguratorType {
         guard let initialView = initialViewController() else {
             fatalError("Initial VIPER module not registered!")
         }
+        rootNavigationController.isNavigationBarHidden = true
         rootNavigationController.viewControllers = [initialView]
         window.rootViewController = rootNavigationController
         window.makeKeyAndVisible()
@@ -39,8 +40,7 @@ class AppConfigurator: AppConfiguratorType {
     // MARK: - Helpers
 
     private func initialViewController() -> UIViewController? {
-        // TODO: Return initial app module
-        return nil
+        return modulesProvider.module(for: SearchPageBuilderType.self)?.buildModule()
     }
 
 }

@@ -1,0 +1,9 @@
+*.xcuserstate
+xcuserdata/
+Pods/
+build/
+Payload/
+App/.configuration
+.DS_Store
+.idea/
+vendor/

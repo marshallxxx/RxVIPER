@@ -29,7 +29,7 @@ class AppServicesProvider: AppServicesProviderType {
 
     private func registerServices() {
         registerRestClient(in: serviceContainer)
-        registerRestClient(in: serviceContainer)
+        registerShutterstockService(in: serviceContainer)
     }
 
     private func registerRestClient(in container: Container) {
