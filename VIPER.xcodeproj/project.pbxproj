@@ -10,6 +10,11 @@
 		3F3F7B86202C5C130061A093 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7B85202C5C130061A093 /* AppConfiguration.swift */; };
 		3F3F7B88202C5D760061A093 /* AppServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7B87202C5D760061A093 /* AppServicesProvider.swift */; };
 		3F3F7B8A202C5F420061A093 /* AppModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7B89202C5F420061A093 /* AppModulesProvider.swift */; };
+		3F3F7B9B202C96F40061A093 /* ShutterstockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7B9A202C96F40061A093 /* ShutterstockService.swift */; };
+		3F3F7B9E202C977C0061A093 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7B9D202C977C0061A093 /* RestClient.swift */; };
+		3F3F7BA0202C97B40061A093 /* URLSessionRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7B9F202C97B40061A093 /* URLSessionRestClient.swift */; };
+		3F3F7BA4202C9A2F0061A093 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7BA3202C9A2F0061A093 /* HTTPMethod.swift */; };
+		3F3F7BA6202C9ADE0061A093 /* ShutterstockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F7BA5202C9ADE0061A093 /* ShutterstockEndpoint.swift */; };
 		3F988411202C52E400D32EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F988410202C52E400D32EA7 /* AppDelegate.swift */; };
 		3F988418202C52E400D32EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F988417202C52E400D32EA7 /* Assets.xcassets */; };
 		3F98841B202C52E400D32EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F988419202C52E400D32EA7 /* LaunchScreen.storyboard */; };
@@ -32,6 +37,11 @@
 		3F3F7B85202C5C130061A093 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		3F3F7B87202C5D760061A093 /* AppServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServicesProvider.swift; sourceTree = "<group>"; };
 		3F3F7B89202C5F420061A093 /* AppModulesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModulesProvider.swift; sourceTree = "<group>"; };
+		3F3F7B9A202C96F40061A093 /* ShutterstockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShutterstockService.swift; sourceTree = "<group>"; };
+		3F3F7B9D202C977C0061A093 /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		3F3F7B9F202C97B40061A093 /* URLSessionRestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionRestClient.swift; sourceTree = "<group>"; };
+		3F3F7BA3202C9A2F0061A093 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3F3F7BA5202C9ADE0061A093 /* ShutterstockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShutterstockEndpoint.swift; sourceTree = "<group>"; };
 		3F98840D202C52E400D32EA7 /* VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F988410202C52E400D32EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F988417202C52E400D32EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,13 +97,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		3F3F7B84202C5BF60061A093 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		3F3F7B8B202C65310061A093 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +109,49 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3F3F7B98202C913D0061A093 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F7B9C202C97440061A093 /* RestService */,
+				3F3F7B99202C96E70061A093 /* ShutterstockService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3F3F7B99202C96E70061A093 /* ShutterstockService */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F7B9A202C96F40061A093 /* ShutterstockService.swift */,
+				3F3F7BA5202C9ADE0061A093 /* ShutterstockEndpoint.swift */,
+			);
+			path = ShutterstockService;
+			sourceTree = "<group>";
+		};
+		3F3F7B9C202C97440061A093 /* RestService */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F7B9D202C977C0061A093 /* RestClient.swift */,
+				3F3F7B9F202C97B40061A093 /* URLSessionRestClient.swift */,
+			);
+			path = RestService;
+			sourceTree = "<group>";
+		};
+		3F3F7BA1202C9A190061A093 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F7BA2202C9A240061A093 /* HttpMethod */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F3F7BA2202C9A240061A093 /* HttpMethod */ = {
+			isa = PBXGroup;
+			children = (
+				3F3F7BA3202C9A2F0061A093 /* HTTPMethod.swift */,
+			);
+			path = HttpMethod;
 			sourceTree = "<group>";
 		};
 		3F988404202C52E400D32EA7 = {
@@ -132,7 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				3F988430202C53D600D32EA7 /* Modules */,
-				3F3F7B84202C5BF60061A093 /* Services */,
+				3F3F7BA1202C9A190061A093 /* Models */,
+				3F3F7B98202C913D0061A093 /* Services */,
 				3F3F7B8B202C65310061A093 /* Protocols */,
 				3F3F7B8C202C65370061A093 /* Extensions */,
 				3F3F7B82202C5BDE0061A093 /* Configuration */,
@@ -400,10 +447,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3F7BA4202C9A2F0061A093 /* HTTPMethod.swift in Sources */,
+				3F3F7B9B202C96F40061A093 /* ShutterstockService.swift in Sources */,
+				3F3F7BA6202C9ADE0061A093 /* ShutterstockEndpoint.swift in Sources */,
 				3F3F7B8A202C5F420061A093 /* AppModulesProvider.swift in Sources */,
+				3F3F7BA0202C97B40061A093 /* URLSessionRestClient.swift in Sources */,
 				3F988411202C52E400D32EA7 /* AppDelegate.swift in Sources */,
 				3F3F7B88202C5D760061A093 /* AppServicesProvider.swift in Sources */,
 				3F3F7B86202C5C130061A093 /* AppConfiguration.swift in Sources */,
+				3F3F7B9E202C977C0061A093 /* RestClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
