@@ -13,12 +13,6 @@
 		3F988411202C52E400D32EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F988410202C52E400D32EA7 /* AppDelegate.swift */; };
 		3F988418202C52E400D32EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F988417202C52E400D32EA7 /* Assets.xcassets */; };
 		3F98841B202C52E400D32EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F988419202C52E400D32EA7 /* LaunchScreen.storyboard */; };
-		3F988426202C52E400D32EA7 /* VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F988425202C52E400D32EA7 /* VIPERTests.swift */; };
-		3F988436202C542A00D32EA7 /* TemplateBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F988435202C542A00D32EA7 /* TemplateBuilder.swift */; };
-		3F988439202C544800D32EA7 /* TemplateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F988438202C544800D32EA7 /* TemplateRouter.swift */; };
-		3F98843B202C545E00D32EA7 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98843A202C545E00D32EA7 /* TemplateView.swift */; };
-		3F98843D202C546800D32EA7 /* TemplatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98843C202C546800D32EA7 /* TemplatePresenter.swift */; };
-		3F98843F202C547300D32EA7 /* TemplateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98843E202C547300D32EA7 /* TemplateInteractor.swift */; };
 		48038DD91B45EFEDB9765D82 /* Pods_VIPERTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F507AA21D21F0F6A6F7602 /* Pods_VIPERTests.framework */; };
 		820122563B86042851CF6313 /* Pods_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C487A6973B6AC24559FD4C /* Pods_VIPER.framework */; };
 /* End PBXBuildFile section */
@@ -44,13 +38,7 @@
 		3F98841A202C52E400D32EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F98841C202C52E400D32EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F988421202C52E400D32EA7 /* VIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F988425202C52E400D32EA7 /* VIPERTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTests.swift; sourceTree = "<group>"; };
 		3F988427202C52E400D32EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F988435202C542A00D32EA7 /* TemplateBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateBuilder.swift; sourceTree = "<group>"; };
-		3F988438202C544800D32EA7 /* TemplateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateRouter.swift; sourceTree = "<group>"; };
-		3F98843A202C545E00D32EA7 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
-		3F98843C202C546800D32EA7 /* TemplatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePresenter.swift; sourceTree = "<group>"; };
-		3F98843E202C547300D32EA7 /* TemplateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateInteractor.swift; sourceTree = "<group>"; };
 		527B2A7B1A3A08C0340D897A /* Pods-VIPERTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERTests/Pods-VIPERTests.release.xcconfig"; sourceTree = "<group>"; };
 		93F507AA21D21F0F6A6F7602 /* Pods_VIPERTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9962FEE372344EC10147529 /* Pods-VIPERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERTests/Pods-VIPERTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,8 +144,8 @@
 		3F988424202C52E400D32EA7 /* VIPERTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F988425202C52E400D32EA7 /* VIPERTests.swift */,
 				3F988427202C52E400D32EA7 /* Info.plist */,
+				44603E6F2653E391150F8CF6 /* Modules */,
 			);
 			path = VIPERTests;
 			sourceTree = "<group>";
@@ -165,53 +153,15 @@
 		3F988430202C53D600D32EA7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				3F988437202C543500D32EA7 /* TemplateModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		3F988431202C53E300D32EA7 /* View */ = {
+		44603E6F2653E391150F8CF6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				3F98843A202C545E00D32EA7 /* TemplateView.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3F988432202C541000D32EA7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				3F98843C202C546800D32EA7 /* TemplatePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		3F988433202C541600D32EA7 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				3F98843E202C547300D32EA7 /* TemplateInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		3F988434202C541C00D32EA7 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				3F988438202C544800D32EA7 /* TemplateRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		3F988437202C543500D32EA7 /* TemplateModule */ = {
-			isa = PBXGroup;
-			children = (
-				3F988431202C53E300D32EA7 /* View */,
-				3F988432202C541000D32EA7 /* Presenter */,
-				3F988434202C541C00D32EA7 /* Router */,
-				3F988433202C541600D32EA7 /* Interactor */,
-				3F988435202C542A00D32EA7 /* TemplateBuilder.swift */,
-			);
-			path = TemplateModule;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		660F2DCCF4C40E65DC01385B /* Frameworks */ = {
@@ -450,15 +400,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F988439202C544800D32EA7 /* TemplateRouter.swift in Sources */,
 				3F3F7B8A202C5F420061A093 /* AppModulesProvider.swift in Sources */,
-				3F98843F202C547300D32EA7 /* TemplateInteractor.swift in Sources */,
 				3F988411202C52E400D32EA7 /* AppDelegate.swift in Sources */,
-				3F98843B202C545E00D32EA7 /* TemplateView.swift in Sources */,
 				3F3F7B88202C5D760061A093 /* AppServicesProvider.swift in Sources */,
-				3F98843D202C546800D32EA7 /* TemplatePresenter.swift in Sources */,
 				3F3F7B86202C5C130061A093 /* AppConfiguration.swift in Sources */,
-				3F988436202C542A00D32EA7 /* TemplateBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +411,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F988426202C52E400D32EA7 /* VIPERTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

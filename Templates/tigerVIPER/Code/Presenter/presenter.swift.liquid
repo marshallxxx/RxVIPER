@@ -1,0 +1,25 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+protocol {{ module_info.name }}PresenterType {
+
+}
+
+class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterType {
+    private var interactor: {{ module_info.name }}InteractorType
+    private var router: {{ module_info.name }}RouterType
+
+    init(interactor: {{ module_info.name }}InteractorType,
+         router: {{ module_info.name }}RouterType) {
+        self.interactor = interactor
+        self.router = router
+    }
+
+}

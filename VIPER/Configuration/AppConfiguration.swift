@@ -39,7 +39,8 @@ class AppConfigurator: AppConfiguratorType {
     // MARK: - Helpers
 
     private func initialViewController() -> UIViewController? {
-        return modulesProvider.module(for: TemplateBuilderType.self)?.buildModule()
+        // TODO: Return initial app module
+        return nil
     }
 
 }

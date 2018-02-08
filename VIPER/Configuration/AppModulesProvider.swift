@@ -30,14 +30,7 @@ class AppModulesProvider: AppModulesProviderType {
     // MARK: - Module registration
 
     private func registerModules() {
-        registerTemplateModule(with: appServicesProvider)
-    }
-
-    private func registerTemplateModule(with appServicesProvider: AppServicesProviderType) {
-        modulesContainer.register(TemplateBuilderType.self) { (resolver) -> TemplateBuilderType in
-            return TemplateBuilder(appServicesProvider: appServicesProvider,
-                                   appModulesProvider: self)
-        }
+        // TODO: Register known app modules
     }
 
 }

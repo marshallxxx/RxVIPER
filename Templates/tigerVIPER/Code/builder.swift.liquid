@@ -1,0 +1,72 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+import UIKit
+import Swinject
+
+protocol {{ module_info.name }}BuilderType {
+    func buildModule() -> UIViewController?
+}
+
+class {{ module_info.name }}Builder: {{ module_info.name }}BuilderType {
+    private let appServicesProvider: AppServicesProviderType
+    private let appModulesProvider: AppModulesProviderType
+
+    init(appServicesProvider: AppServicesProviderType,
+         appModulesProvider: AppModulesProviderType) {
+        self.appServicesProvider = appServicesProvider
+        self.appModulesProvider = appModulesProvider
+    }
+
+    func buildModule() -> UIViewController? {
+        let container = Container()
+        registerInteractor(in: container, servicesProvider: appServicesProvider)
+        registerRouter(in: container, modulesProvider: appModulesProvider)
+        registerPresenter(in: container)
+        registerView(in: container)
+
+        return container.resolve({{ module_info.name }}ViewType.self) as? UIViewController
+    }
+
+    private func registerInteractor(in container: Container,
+                                    servicesProvider: AppServicesProviderType) {
+        container.register({{ module_info.name }}InteractorType.self) { _ -> {{ module_info.name }}InteractorType in
+            // Inject services
+            return {{ module_info.name }}Interactor()
+        }
+    }
+
+    private func registerRouter(in container: Container, modulesProvider: AppModulesProviderType) {
+        container.register({{ module_info.name }}RouterType.self) { (resolver) -> {{ module_info.name }}RouterType in
+            let view = resolver.resolve({{ module_info.name }}ViewType.self)!
+            return {{ module_info.name }}Router(view: view,
+                                  modulesProvider: modulesProvider)
+        }
+    }
+
+    private func registerPresenter(in container: Container) {
+        container.register({{ module_info.name }}PresenterType.self) { (resolver) -> {{ module_info.name }}PresenterType in
+            let interactor = resolver.resolve({{ module_info.name }}InteractorType.self)!
+            let router = resolver.resolve({{ module_info.name }}RouterType.self)!
+            return {{ module_info.name }}Presenter(interactor: interactor,
+                                     router: router)
+        }
+    }
+
+    private func registerView(in container: Container) {
+        container.register({{ module_info.name }}ViewType.self) { _ -> {{ module_info.name }}ViewType in
+            return {{ module_info.name }}ViewController(nibName: nil, bundle: nil)
+            }.initCompleted { (resolver, view) in
+                guard let view = view as? {{ module_info.name }}ViewController else { return }
+                let presenter = resolver.resolve({{ module_info.name }}PresenterType.self)!
+                view.presenter = presenter
+        }
+    }
+
+}

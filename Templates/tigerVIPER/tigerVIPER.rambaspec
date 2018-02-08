@@ -1,0 +1,25 @@
+# Template information section
+name: "tigerVIPER"
+summary: "Swift VIPER module template"
+author: "Evghenii Nicolaev"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: View/TemplateView.swift, path: Code/View/view.swift.liquid}
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+- {name: Builder.swift, path: Code/builder.swift.liquid}
+
+# The declarations for test files
+test_files:
+- {name: InteractorTests.swift, path: Tests/interactor_tests.swift.liquid}
+- {name: PresenterTests.swift, path: Tests/presenter_tests.swift.liquid}
+
+# Template dependencies
+dependencies:
+- RxSwift
+- RxCocoa
+- Swinject
