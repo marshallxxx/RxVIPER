@@ -28,7 +28,22 @@ class AppServicesProvider: AppServicesProviderType {
     // MARK: - Register App Services
 
     private func registerServices() {
-        // TODO: Register known app services
+        registerRestClient(in: serviceContainer)
+        registerRestClient(in: serviceContainer)
+    }
+
+    private func registerRestClient(in container: Container) {
+        container.register(RestClient.self) { _ -> RestClient in
+            let urlSessionConfiguration = URLSessionConfiguration.default
+            return URLSessionRestClient(sessionConfiguration: urlSessionConfiguration)
+        }
+    }
+
+    private func registerShutterstockService(in container: Container) {
+        container.register(ShutterstockServiceType.self) { (resolver) -> ShutterstockServiceType in
+            let restClient = resolver.resolve(RestClient.self)!
+            return ShutterstockService(restClient: restClient)
+        }
     }
 
 }
